@@ -31,4 +31,9 @@ RSpec.describe Sum do
 		expect(sum.add_digit("//;\n1;2")).to eq(3)
 	end
 
+	it 'will throw and exception on negative number' do 
+		sum = Sum.new
+		expect (sum.add_digit(-123)).to raise_error(ArgumentError, 'Negative number: -123 is not allowed')	
+	end
+
 end
