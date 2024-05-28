@@ -33,7 +33,8 @@ RSpec.describe Sum do
 
 	it 'will throw and exception on negative number' do 
 		sum = Sum.new
-		expect (sum.add_digit(-123)).to raise_error(ArgumentError, 'Negative number: -123 is not allowed')	
+		expect {sum.add_digit(-123)}.to raise_error(ArgumentError, 'Negative number: -123 is not allowed')
+		expect { sum.add_digit(3, -5) }.to raise_error(ArgumentError, 'Negative number: -5 is not allowed')
+    expect { sum.add_digit("//;\n8;-1") }.to raise_error(ArgumentError, 'Negative number: -1 is not allowed')
 	end
-
 end
