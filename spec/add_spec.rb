@@ -21,4 +21,9 @@ RSpec.describe Sum do
 		expect(sum.add_digit([12,123,1234])).to eq(19)
 	end
 
+	it 'can handle a new line between numbers' do
+		sum = Sum.new
+		expect(sum.add_digit("12\n,3")).to eq(6)
+	end
+
 end
