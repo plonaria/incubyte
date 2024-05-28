@@ -26,4 +26,9 @@ RSpec.describe Sum do
 		expect(sum.add_digit("12\n,3")).to eq(6)
 	end
 
+	it 'supports different delimiters' do
+		sum = Sum.new
+		expect(sum.add_digit("//;\n1;2")).to eq(3)
+	end
+
 end
