@@ -11,4 +11,8 @@ RSpec.describe Sum do
 		expect(sum).to respond_to(:add_digit)
 	end
 
+	it 'will sum the digits' do 
+		sum = Sum.new
+		expect(sum.add_digit(123)).to eq(6)
+	end
 end
